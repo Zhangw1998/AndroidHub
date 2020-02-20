@@ -4,18 +4,18 @@ import android.app.Activity
 
 object ActivityCollector {
 
-    private val activitys = arrayListOf<Activity>()
+    private val activities = arrayListOf<Activity>()
 
     fun addActivity(activity: Activity) {
-        activitys.add(activity)
+        activities.add(activity)
     }
 
     fun removeActivity(activity: Activity) {
-        activitys.remove(activity)
+        activities.remove(activity)
     }
 
     fun finishAll() {
-        for (activity in activitys) {
+        for (activity in activities) {
             if (activity.isFinishing) {
                 activity.finish()
             }
