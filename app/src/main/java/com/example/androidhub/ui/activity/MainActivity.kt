@@ -7,4 +7,8 @@ class MainActivity : BaseActivity() {
 
     override fun layoutId(): Int = R.layout.activity_main
 
+    override fun initView() { }
+
+    override fun initAction() { }
+
 }
