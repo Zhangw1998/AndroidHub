@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    tools:context=".ui.activity.ExoplayerActivity">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/exo_pv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fit"/>
 
     <Button
-        android:id="@+id/btn_exoplayer"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_choose"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/exoplayer"/>
-
-    <Button
-        android:id="@+id/btn_videos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btn_exoplayer"
-        android:text="@string/test_videos"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/choose"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
