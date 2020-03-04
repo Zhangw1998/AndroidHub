@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidhub.R
 import com.example.androidhub.bean.TestVideo
-import com.example.androidhub.utils.ExoplayerHelper
 import kotlinx.android.synthetic.main.item_video.view.*
 
 class Pager2Adapter(private val videoList: List<TestVideo>): RecyclerView.Adapter<Pager2Adapter.ViewHolder>() {
@@ -30,7 +29,6 @@ class Pager2Adapter(private val videoList: List<TestVideo>): RecyclerView.Adapte
         fun bind(video: TestVideo) {
             with(itemView) {
                 tv_title.text = video.videoTitle
-                ExoplayerHelper.initializePlayer(exo_pv_item, video.url)
             }
         }
 

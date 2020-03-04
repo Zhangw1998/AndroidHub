@@ -15,8 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activity.VideoActivity"></activity>
-        <activity android:name=".ui.activity.ExoplayerActivity" />
+        <activity android:name=".ui.activity.VideoActivity"/>
+        <activity android:name=".ui.activity.ExoplayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
