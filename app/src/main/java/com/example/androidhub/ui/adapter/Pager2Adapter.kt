@@ -6,13 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidhub.R
 import com.example.androidhub.bean.TestVideo
+import com.example.androidhub.exoplayer.ExoPlayerHelper
 import kotlinx.android.synthetic.main.item_video.view.*
 
 class Pager2Adapter(private val videoList: List<TestVideo>): RecyclerView.Adapter<Pager2Adapter.ViewHolder>() {
 
+    private val helper : ExoPlayerHelper? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.create(parent)
+        val ctx = parent.context
+        val view = LayoutInflater.from(ctx).inflate(R.layout.item_video, parent, false);
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -24,19 +28,12 @@ class Pager2Adapter(private val videoList: List<TestVideo>): RecyclerView.Adapte
         holder.bind(video)
     }
 
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
         fun bind(video: TestVideo) {
             with(itemView) {
                 tv_title.text = video.videoTitle
-            }
-        }
-
-        companion object {
-            fun create(parent: ViewGroup): ViewHolder {
-                val ctx = parent.context
-                val view = LayoutInflater.from(ctx).inflate(R.layout.item_video, parent, false);
-                return ViewHolder(view)
+                exo_pv_item.player = helper?.player
             }
         }
     }

@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AndroidHub</string>
     <string name="exoplayer">ExoPlayer</string>
-    <string name="test_videos">Test Videos</string>
+    <string name="viewpager2">ViewPager2</string>
     <string name="choose">选择</string>
+    <string name="hello_world">Hello, world</string>
+    <string name="data_binding">DataBinding</string>
+    <string name="dagger">Dagger</string>
+    <string name="register">Register</string>
+    <string name="choose_api">Choose Api</string>
 </resources>

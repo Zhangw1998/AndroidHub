@@ -119,7 +119,7 @@ class ExoPlayerHelper private constructor(val player: ExoPlayer) :
                 Log.d(TAG, "onSeekProcessed")
             }
         }
-        player?.addListener(eventListener)
+        player.addListener(eventListener)
 
     }
 
