@@ -4,15 +4,15 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     defaultConfig {
         applicationId "com.example.androidhub"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.minSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,6 +30,20 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+//    sourceSets {
+//        main {
+//            if (Boolean.valueOf(rootProject.ext.isDebug)) {
+//                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+//            } else {
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                java {
+//                    //排除java/debug文件夹下的所有文件
+//                    exclude '*module'
+//                }
+//            }
+//        }
+//    }
+
 }
 
 dependencies {

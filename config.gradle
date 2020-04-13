@@ -1,0 +1,18 @@
+ext {
+
+    /**
+     * isDebug  true,  使每个组件独立运行
+     *          false, 将所有组件集成到宿主 App 中
+     * 修改之后需要Sync方可生效
+     */
+    isDebug = true
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+            minSdkVersion    : 24,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+}
