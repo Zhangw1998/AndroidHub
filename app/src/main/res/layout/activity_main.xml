@@ -46,4 +46,22 @@
         app:layout_constraintTop_toBottomOf="@id/btn_dagger"
         android:text="@string/register"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="material"
+        app:cornerRadius="10dp"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
+        app:strokeWidth="10dp"
+        app:icon="@drawable/exo_icon_vr"
+        app:strokeColor="@color/colorPrimary"
+        android:theme="@style/Theme.MaterialComponents.Light"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_material"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

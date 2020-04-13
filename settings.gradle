@@ -1,2 +1,4 @@
+include ':base'
 include ':app'
+include ':viewmodule'
 rootProject.name='AndroidHub'

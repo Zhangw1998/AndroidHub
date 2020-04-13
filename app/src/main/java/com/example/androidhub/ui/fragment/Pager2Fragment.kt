@@ -10,6 +10,8 @@ import com.example.androidhub.R
 import com.example.androidhub.bean.ImageData
 import com.example.androidhub.bean.TestVideo
 import com.example.androidhub.exoplayer.ExoPlayerHelper
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import kotlinx.android.synthetic.main.item_video.*
 
 
@@ -47,6 +49,15 @@ class Pager2Fragment: Fragment() {
                 .build()
             exo_pv_item.player = helper?.player
             tv_title.text = it.videoTitle
+
+            exo_pv_item.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FILL
+
+            helper?.player?.let {
+            }
+            helper?.let {
+                lifecycle.addObserver(it)
+            }
+
         }
         videoData?.let {
             helper = ExoPlayerHelper.Builder(requireContext())
@@ -54,18 +65,21 @@ class Pager2Fragment: Fragment() {
                 .build()
             exo_pv_item.player = helper?.player
             tv_title.text = it.name
+            helper?.let {
+                lifecycle.addObserver(it)
+            }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        helper?.play()
+//        helper?.play()
         Log.d(TAG, "onResume: ${this.id}")
     }
 
     override fun onPause() {
         super.onPause()
-        helper?.pause()
+//        helper?.pause()
         Log.d(TAG, "onPause: ${this.id}")
     }
 

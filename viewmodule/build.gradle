@@ -1,23 +1,19 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.example.androidhub"
+        applicationId "com.zhangwww.viewmodule"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.minSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
 
-    dataBinding {
-        enabled = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -30,6 +26,10 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+    // 设置资源文件以'view_'开头
+    resourcePrefix "view_"
+
 }
 
 dependencies {
