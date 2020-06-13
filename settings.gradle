@@ -1,3 +1,4 @@
+include ':networkmodule'
 include ':base'
 include ':app'
 include ':viewmodule'
